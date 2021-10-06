@@ -18,7 +18,6 @@ body,html {
 #hipotenusa h3 {margin-bottom: 1rem;}
 #hipotenusa p {display: flex;}
 #hipotenusa p span {margin-left: auto;}
-#hipotenusa a {
-  display: block;
-  margin-top: 1rem;
-}
+#hipotenusa .links {margin-top: 1rem; display: flex;}
+#hipotenusa a {display: block;}
+#hipotenusa a:last-child {margin-left: auto;}
