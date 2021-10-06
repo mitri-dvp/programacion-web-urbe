@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body,html {
+  font-family: 'Poppins', sans-serif;
+}
+
+#hipotenusa {
+  max-width: max-content;
+  margin: auto;
+  margin-top: 5rem;
+}
+
+#hipotenusa h3 {margin-bottom: 1rem;}
+#hipotenusa p {display: flex;}
+#hipotenusa p span {margin-left: auto;}
+#hipotenusa a {
+  display: block;
+  margin-top: 1rem;
+}
