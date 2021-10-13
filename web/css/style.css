@@ -51,6 +51,10 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
+hr {
+  margin: 1rem 0;
+}
+
 #home {
   max-width: max-content;
   margin: auto;
@@ -79,16 +83,13 @@ input[type=number] {
   height: 100%;
 }
 
+#arreglos_asociativos,
 #octagono,
 #hipotenusa {
   max-width: max-content;
-  margin: auto;
-  margin-top: 5rem;
+  margin: 5rem auto;
 }
 
-#octagono hr {
-  margin: 1rem 0;
-}
 #octagono form {
   display: flex;
   align-items: center;
@@ -102,8 +103,41 @@ input[type=number] {
 #octagono label {
   margin-right: 0.5rem;
 }
-#octagono a {
+#arreglos_asociativos a,
+#octagono a,
+#hipotenusa a {
   margin-top: 0;
+}
+
+#arreglos_asociativos label {cursor: pointer;}
+
+#arreglos_asociativos input {
+  margin-top: 0.25rem;
+  margin-bottom: 1rem;
+}
+
+#arreglos_asociativos button[type=submit] {
+  margin: auto;
+  width: 100%;
+}
+
+#arreglos_asociativos h4 {
+  margin-bottom: 0.5rem;
+}
+#arreglos_asociativos form .row {
+  display: flex;
+  gap: 1rem;
+}
+#arreglos_asociativos form .row label {
+  width: 16rem;
+}
+#arreglos_asociativos form .row input {
+  height: 2.625rem;
+}
+#arreglos_asociativos .restart {
+  text-align: center;
+  margin-top: 1rem;
+  width: 100%;
 }
 
 .title {

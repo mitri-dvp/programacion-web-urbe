@@ -26,6 +26,7 @@ $area = 4 * $longitud_lado * $apotema;
     <h3 class="title">Cálculo del Área del Octágono Regular:</h3>
 
     <?php if ($longitud_lado !== null) { ?>
+      <hr>
       <div class="results">
         <p>Longitud del Lado del Octágono: <span><?= $longitud_lado ?> cm</span></p>
         <p>Ángulo Central del Octágono: <span><?= $angulo_central ?>&deg;</span></p>
@@ -38,7 +39,7 @@ $area = 4 * $longitud_lado * $apotema;
 
     <form method="post" action="">
       <label>Introduzca la longitud del lado:</label>
-      <input type="number" min="0" name="longitud_lado" required>
+      <input type="number" min="0" step="0.01" name="longitud_lado" required>
       <button type="submit">Enviar</button>
     </form>
 

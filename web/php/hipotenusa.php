@@ -19,11 +19,15 @@ $hipotenusa = sqrt(pow($lado_a, 2) + pow($lado_b, 2));
   <div id="hipotenusa">
     <h3 class="title">Cálculo de la Hipotenusa del Triángulo:</h3>
 
+    <hr>
+
     <div class="results">
       <p>Lado A del Triangulo: <span><?= $lado_a ?> cm</span></p>
       <p>Lado B del Triangulo: <span><?= $lado_b ?> cm</span></p>
       <p>Hipotenusa del Triangulo: <span><?= $hipotenusa ?> cm</span></p>
     </div>
+
+    <hr>
 
     <div class="links">
       <a href="../index.html">Volver</a>
