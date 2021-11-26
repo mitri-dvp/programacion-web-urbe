@@ -83,6 +83,7 @@ hr {
   height: 100%;
 }
 
+#bloc,
 #arreglos_asociativos,
 #octagono,
 #hipotenusa {
@@ -151,3 +152,10 @@ hr {
 .links {display: flex;}
 .links a {display: block;}
 .links a:last-child {margin-left: auto;}
+
+#bloc .viewport {
+  width: 40rem;
+  height: 30rem;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
