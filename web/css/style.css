@@ -13,12 +13,7 @@ a {
   color: inherit;
   display: block;
   text-decoration: none;
-  background-color: #91181b;
-  color: #fff;
-  padding: 0.5rem 0.75rem;
-  border-radius: 0.5rem;
   width: max-content;
-  margin-top: 1rem;
 }
 a:hover {opacity: 0.9;}
 
@@ -150,12 +145,194 @@ hr {
 .results p span {margin-left: auto;}
 
 .links {display: flex;}
-.links a {display: block;}
+body > a,
+.links a {
+  background-color: #91181b;
+  color: #fff;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+}
 .links a:last-child {margin-left: auto;}
+
+#bloc h3 {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+#bloc form input[type='submit'] {
+  margin-top: 1rem;
+  cursor: pointer;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  color: #fff;
+  background-color: #91181b;
+}
+#bloc form select {
+  border: none;
+  padding: 0.25rem 1rem;
+  font-family: inherit;
+  font-size: 1rem;
+  background-color: #91181b;
+  color: #fff;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  margin: auto;
+  margin-bottom: 1rem;
+  display: block;
+  width: max-content;
+}
+#bloc form select option {
+  border-radius: 0;
+  background-color: #fff;
+  color: #000;
+  padding: 0;
+}
+#bloc form label span {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+#bloc form textarea {
+  font-family: inherit;
+  padding: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  resize: none;
+  width: 100%;
+}
 
 #bloc .viewport {
   width: 40rem;
   height: 30rem;
   background-color: #fff;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  overflow-y: auto;
+  margin-bottom: 1rem;
+}
+#bloc .viewport .path {
+  overflow-x: auto;
+  display: flex;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+#bloc .viewport .path > a {
+  font-family: 'Poppins', sans-serif;
+  flex-shrink: 0;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 1px 0px;
+  transition: ease-in-out 0.2s background-color, ease-in-out 0.2s color;
+}
+#bloc .viewport .path > a:hover {
+  background-color: #91181b;
+  color: #fff;
+}
+
+#bloc .viewport .directory {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem;
+  justify-content: space-between;
+}
+#bloc .viewport .directory > a {
+  height: max-content;
+  max-width: 6rem;
+  min-width: 6rem;
+  flex: 1 0 auto;
+}
+#bloc .viewport .directory > a.last {
+  flex: 100;
+  visibility: hidden;
+}
+
+#bloc .viewport .directory > a img {
+  max-height: 4.25rem;
+  display: block;
+  margin: auto;
+  margin-bottom: 0.5rem;
+}
+
+#bloc .viewport .directory > a span {
+  word-break: break-all;
+  text-align: center;
+  font-size: 0.8rem;
+  display: block;
+}
+
+#bloc .modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #00000030;
+}
+#bloc .modal form {
+  background-color: #fff;
+  padding: 4rem 2rem;
+  border-radius: 0.5rem;
+  width: 40rem;
+  display: grid;
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+#bloc .modal form .delete {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  height: 3rem;
+  width: 3rem;
+  cursor: pointer;
+}
+#bloc input.hidden {
+  display: none;
+}
+#bloc .modal form input {
+  margin-top: 1rem;
+  cursor: pointer;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  color: #fff;
+  background-color: #2ecc71;
+}
+#bloc .alert {
+  background-color: #9ae8bb;
+  border: 1px solid #1b7943;
+  color: #1b7943;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -4rem);
+  animation: show-alert 3s ease-in-out;
+}
+#bloc .alert.success {
+  background-color: #9ae8bb;
+  border: 1px solid #1b7943;
+  color: #1b7943;
+}
+#bloc .alert.error {
+  background-color: #ee8478;
+  border: 1px solid #e3301e;
+  color: #e3301e;
+}
+
+
+
+@keyframes show-alert {
+  0% {
+    transform: translate(-50%, -4rem);
+  }
+  10%,
+  50%,
+  90% {
+    transform: translate(-50%, 2rem);
+  }
+  100% {
+    transform: translate(-50%, -4rem);
+  }
 }
