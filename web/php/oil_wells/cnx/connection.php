@@ -10,9 +10,6 @@ $db_name = substr($db_url["path"], 1);
 $conn_string = "host=".$db_host." port=5432 dbname=".$db_name." user=".$db_user." password=".$db_password;
 $conn = pg_connect($conn_string);
 
- if($conn) {
-   echo 'Conected';
- } else {
-   echo 'Not connected';
- }
+$timezone_identifier = 'America/Caracas';
+date_default_timezone_set($timezone_identifier);
 ?>

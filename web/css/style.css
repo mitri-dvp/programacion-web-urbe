@@ -78,6 +78,7 @@ hr {
   height: 100%;
 }
 
+#oil_wells,
 #bloc,
 #arreglos_asociativos,
 #octagono,
@@ -321,7 +322,206 @@ body > a,
   color: #e3301e;
 }
 
+#oil_wells.loading * {
+  cursor: progress!important;
+}
+#oil_wells input.hidden {
+  display: none;
+}
 
+#oil_wells .wells {
+  display: grid;
+  gap: 1rem;
+  height: 22rem;
+  overflow-y: auto;
+  padding: 1rem;
+}
+
+#oil_wells .well_form_container form {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+#oil_wells .well_form_container .title {
+  text-align: center;
+  margin: 1rem 0;
+}
+#oil_wells .add_btn,
+#oil_wells .read_btn,
+#oil_wells .update_btn,
+#oil_wells .delete_btn,
+#oil_wells .return_btn,
+#oil_wells .graph_btn, 
+#oil_wells .reset_btn {
+  border-radius: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  border: 0;
+  display: block;
+  margin: auto;
+  cursor: pointer;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+#oil_wells .add_btn {
+  background-color: #2ecc71;
+  background-image: url('../assets/buttons/add.svg');
+}
+#oil_wells .read_btn {
+  background-color: #f1c40f;
+  background-image: url('../assets/buttons/read.svg');
+}
+#oil_wells .update_btn {
+  background-color: #3498db;
+  background-image: url('../assets/buttons/update.svg');
+}
+#oil_wells .delete_btn {
+  background-color: #e3301e;
+  background-image: url('../assets/buttons/delete.svg');
+}
+#oil_wells .return_btn {
+  background-color: #d35400;
+  background-image: url('../assets/buttons/return.svg');
+}
+#oil_wells .graph_btn {
+  background-color: #9b59b6;
+  background-image: url('../assets/buttons/graph.svg');
+}
+#oil_wells .reset_btn {
+  background-color: #e3301e;
+  color: #fff;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  height: 2.5rem;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+
+#oil_wells .well_form_container form button {
+  height: 2.5rem;
+  width: 2.5rem;
+  background-size: 1.5rem;
+}
+
+#oil_wells .well_form_container form input {
+  height: 100%;
+}
+#oil_wells .well_form_container form button svg {
+  fill: #fff;
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+#oil_wells > button:active {
+  opacity: 0.9;
+}
+
+#oil_wells .wells .well {
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  align-items: center;
+}
+
+#oil_wells .wells .well .operations {
+  display: flex;
+  gap: 0.75rem;
+}
+#oil_wells .wells .well .operations > button {
+  width: 2rem;
+  height: 2rem;
+  background-size: 1rem;
+  cursor: pointer;
+}
+
+#oil_wells .modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #00000030;
+}
+#oil_wells .modal > div {
+  background: #fff;
+  padding: 1rem;
+  padding-top: 2rem;
+  border-radius: 0.5rem;
+  width: 30rem;
+  min-height: 30rem;
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+#oil_wells .modal > div > .delete_btn {
+  height: 1.75rem;
+  width: 1.75rem;
+  background-size: 1rem;
+  position: absolute;
+  right: 1rem;
+}
+
+#oil_wells .modal h3 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+#oil_wells .modal .measurements {
+  height: 20rem;
+  margin-bottom: 1rem;
+  overflow-y: auto;
+}
+#oil_wells .modal .measurements .item {
+  padding: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#oil_wells .modal .measurements .item:nth-child(odd) {
+  background-color: #f4f4f4;
+}
+#oil_wells .modal .measurements .item .id {
+  width: 1rem;
+  font-size: 0.75rem;
+}
+
+#oil_wells .modal .measurements .item b {
+  margin-left: 1rem;
+}
+#oil_wells .modal .measurements .item.center {
+  display: block;
+  text-align: center;
+}
+
+#oil_wells .modal .measurements .operations {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+#oil_wells .modal .measurements .update_btn,
+#oil_wells .modal .measurements .delete_btn {
+  height: 1.75rem;
+  width: 1.75rem;
+  background-size: 1rem;
+}
+
+#oil_wells .modal form {
+  display: grid;
+  gap: 0.5rem;
+}
+#oil_wells .modal form button {
+  height: 2.5rem;
+  width: 100%;
+  background-size: 2rem;
+}
 
 @keyframes show-alert {
   0% {

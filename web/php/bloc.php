@@ -35,7 +35,7 @@
   <meta charset="UTF-8">
   <title>Aplicación Bloc de Notas</title>
   <link rel="stylesheet" href="../css/style.css">
-  <link rel="icon" href="../assets/icon.svg">
+  <link rel="icon" href="../assets/files/icon.svg">
 </head>
 
 <body>
@@ -62,21 +62,21 @@
         if($current_folder['basename'] === ".") {
       ?>
         <a href="?path=<?= $current_path ?>" class="item">
-        <img src="../assets/folder.svg" alt="">
+        <img src="../assets/files/folder.svg" alt="">
           <span><?= $current_folder['basename']?></span>
         </a>
       <?php
         } elseif ($current_folder['basename'] === "..") {
       ?>
         <a href="?path=<?= $up_path ?>" class="item">
-          <img src="../assets/folder.svg" alt="">
+          <img src="../assets/files/folder.svg" alt="">
             <span><?= $current_folder['basename']?></span>
           </a>
       <?php
         } else {
       ?>
         <a href="?path=<?= $current_path.$current_folder['basename']."/" ?>" class="item">
-        <img src="../assets/folder.svg" alt="">
+        <img src="../assets/files/folder.svg" alt="">
           <span><?= $current_folder['basename']?></span>
         </a>
       <?php
@@ -94,14 +94,14 @@
           if($current_file['extension'] === 'txt') {
             ?>
               <a href="?path=<?= $current_path ?>&txt_file=<?= $current_file['basename']?>" class="item">
-                <img src="../assets/<?= $image ?>.svg" alt="">
+                <img src="../assets/files/<?= $image ?>.svg" alt="">
                 <span><?= $current_file['basename']?></span>
               </a>
             <?php
               } else {
             ?>
               <a href="#" class="item">
-                <img src="../assets/<?= $image ?>.svg" alt="">
+                <img src="../assets/files/<?= $image ?>.svg" alt="">
                 <span><?= $current_file['basename']?></span>
               </a>
             <?php
@@ -110,7 +110,7 @@
           $image = 'blank';
           ?>
           <a href="#" class="item">
-            <img src="../assets/<?= $image ?>.svg" alt="">
+            <img src="../assets/files/<?= $image ?>.svg" alt="">
             <span><?= $current_file['basename']?></span>
           </a>
         <?php
