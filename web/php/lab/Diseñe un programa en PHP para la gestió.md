@@ -20,3 +20,18 @@ Recurso: Examenes de laboratorios
 Usuarios: Admin. Pacientes.
 Roles: Enfermera/Doctor/Paciente.
 Paginas: Login, Editor de Examenes.
+Tipos de Examen: 
+* Exámenes de Sangre.
+* Perfil Tiroidero.
+* Examen de Glucosa.
+* Examen Rectal.
+* Colesterol Total.
+* Colonoscopia.
+* Audiograma.
+* Presión Arterial.
+* Densitometría Ósea.
+* Exámen Ocular.
+
+Enfermera: Registra Pacientes, Solicita resultados de examenes
+Doctor: Ingresa Resultados de Examenes, enviar PDF por correo.
+

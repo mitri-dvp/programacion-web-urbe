@@ -554,6 +554,13 @@ form span {
   min-height: 100vh;
 }
 
+#lab .output {
+  margin-top: 1rem;
+}
+#lab .output.success { color: #2ecc71;}
+#lab .output.error { color: #e3301e;}
+#lab .output.info { color: #3498db;}
+
 #lab .link {
   display: flex;
   margin-top: 1rem;
