@@ -91,9 +91,12 @@ if(isset($_GET['id']) && isset($_SESSION['user'])) {
     <?php } ?>
     <?php } ?>
 
-    </div>
-    <a class="link" href="../add/exam.php?id=<?= $patient->id ?>">Registrar Solicitud</a>
-    <a class="link" href="../../dashboard.php">Volver</a>
+  </div>
+  <a class="link" href="../add/exam.php?id=<?= $patient->id ?>">Registrar Solicitud</a>
+  <a class="link" href="../../dashboard.php">Volver</a>
+  <span class="output info" style="width: 20rem;">
+    <h5>Usuarios Enfermero/a puede registrar una solicitud de examen para que un Doctor/a complete el proceso y enviar los  resultados por el correo registrado del Paciente.</h5>
+  </span>
   </div>
 </body>
 

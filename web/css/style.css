@@ -615,7 +615,6 @@ form span {
   grid-template-columns: 1fr 15rem 1fr 1fr 1fr;
 }
 
-
 #lab .exams .item {
   grid-template-columns: 1fr 1fr 1fr;
   text-align: center;
@@ -651,9 +650,6 @@ form span {
 #lab .hidden {
   display: none;
 }
-
-
-
 
 @keyframes show-alert {
   0% {

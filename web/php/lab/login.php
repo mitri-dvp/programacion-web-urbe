@@ -65,6 +65,12 @@ if(isset($_POST['id']) && isset($_POST['password'])) {
       </span>
     <?php
     }?>
+  <span class="output info">
+    <h5 style="text-align: center;">Doctor:</h5>
+    <h5>Cédula: 123 Contraseña: 123</h5>
+    <h5 style="text-align: center;">Enfermera:</h5>
+    <h5>Cédula: 456 Contraseña: 456</h5>
+  </span>
   </div>
 </body>
 
