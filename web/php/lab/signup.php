@@ -27,10 +27,10 @@ if(isset($_POST['id']) && isset($_POST['name']) && isset($_POST['password']) && 
     if ($insert_query_result == true) {
       $user = new User($id, $name, $email, $role);
       $_SESSION['user'] = serialize($user);
-      header('Location: '.'dashboard.php');
-      $register_error = true;
-    } else {
       $register_error = false;
+      header('Location: '.'dashboard.php');
+    } else {
+      $register_error = true;
     }
   } else {
     $user_exists = true;
@@ -79,7 +79,7 @@ if(isset($_POST['id']) && isset($_POST['name']) && isset($_POST['password']) && 
         <span>Enfermero/a</span>
         <input type="radio" name="role" value="nurse" required>
       </label>
-      <input class="submit" type="submit" value="Regristrar">
+      <input class="submit" type="submit" value="Registrar">
     </form>
     <span class="link">¿ya tiene cuenta? <a href="./login.php">Ingresar</a></span>
     <?php if (isset($user_exists) && $user_exists === TRUE) {?>

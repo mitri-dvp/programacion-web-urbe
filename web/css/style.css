@@ -17,6 +17,7 @@ a {
 }
 a:hover {opacity: 0.9;}
 
+select,
 button[type=submit],
 input {
   width: 100%;
@@ -532,6 +533,7 @@ form span {
 }
 
 #lab form label span {
+  display: block;
   margin-bottom: 0.5rem;
 }
 
@@ -543,6 +545,11 @@ form span {
 
 #lab form .submit:hover {
   opacity: 0.9;
+}
+
+#lab input[type="text"]:read-only {
+  background-color: #f4f4f4;
+  color: #555;
 }
 
 #lab {
@@ -567,11 +574,11 @@ form span {
   gap: 0.5rem;
 }
 
-#lab .link a {
+#lab a {
   color: #3498db;
 }
 
-#lab .link a:hover {
+#lab a:hover {
   text-decoration: underline;
   opacity: 0.9;
 }
@@ -585,6 +592,28 @@ form span {
   width: auto;
   margin-left: auto;
 }
+
+#lab .patients {
+  height: 15rem;
+  overflow-y: auto;
+}
+
+#lab .patients .item {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 1rem;
+  padding: 0.5rem;
+}
+
+#lab .patients .item:nth-child(even) {
+  background-color: #f4f4f4;
+}
+
+#lab .patients .item .name {
+  width: 6rem;
+}
+
+
 
 @keyframes show-alert {
   0% {
