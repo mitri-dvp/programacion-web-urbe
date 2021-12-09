@@ -100,7 +100,7 @@ if(isset($_POST['id']) && isset($_POST['results']) && isset($_POST['mail'])) {
     $exam_exists = true;
     $exam = pg_fetch_object($select_query_result);
   }
-
+  echo 'trying to require';
   require_once('../../../../vendor/autoload.php');
 
   $mpdf = new \Mpdf\Mpdf();
