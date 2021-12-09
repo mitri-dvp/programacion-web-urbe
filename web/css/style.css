@@ -593,11 +593,17 @@ form span {
   margin-left: auto;
 }
 
+#lab .exams,
 #lab .patients {
   height: 15rem;
   overflow-y: auto;
 }
+#lab .user {
+  margin-bottom: 1rem;
+}
 
+#lab .user .item,
+#lab .exams .item,
 #lab .patients .item {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -605,13 +611,47 @@ form span {
   padding: 0.5rem;
 }
 
-#lab .patients .item:nth-child(even) {
+#lab .patients .item {
+  grid-template-columns: 1fr 15rem 1fr 1fr 1fr;
+}
+
+
+#lab .exams .item {
+  grid-template-columns: 1fr 1fr 1fr;
+  text-align: center;
+}
+#lab .exams .item.lg {
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+#lab .user .item:nth-child(odd),
+#lab .exams .item:nth-child(odd),
+#lab .patients .item:nth-child(odd) {
   background-color: #f4f4f4;
 }
 
 #lab .patients .item .name {
   width: 6rem;
 }
+
+#lab .user   .item.header,
+#lab .patients .item.header,
+#lab .exams .item.header {
+  background-color: #555;
+  color: #fff;
+}
+
+#lab form textarea {
+  font-family: inherit;
+  padding: 1rem;
+  resize: none;
+  width: 100%;
+}
+
+#lab .hidden {
+  display: none;
+}
+
 
 
 

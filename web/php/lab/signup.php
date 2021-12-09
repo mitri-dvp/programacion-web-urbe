@@ -2,13 +2,13 @@
 session_start();
 include_once('./cnx/connection.php');
 include_once('./classes/user.php');
-include_once('./utils/role_to_id.php');
+include_once('./utils/index.php');
 
 if(isset($_POST['id']) && isset($_POST['name']) && isset($_POST['password']) && isset($_POST['email']) && isset($_POST['role'])) {
   $id = $_POST['id'];
   $name = $_POST['name'];
   $password = $_POST['password'];
-  $password = $_POST['email'];
+  $email = $_POST['email'];
   $_role = $_POST['role'];
   $role = role_to_id($_role);
   $password_hash = password_hash($password, PASSWORD_DEFAULT);
@@ -25,7 +25,7 @@ if(isset($_POST['id']) && isset($_POST['name']) && isset($_POST['password']) && 
     $insert_query_result = pg_query($conn, $insert_query); 
     $insert_query_count = pg_num_rows($insert_query_result);
     if ($insert_query_result == true) {
-      $user = new User($id, $name, $email, $role);
+      $user = new User($id, $name, $email, id_to_role($role));
       $_SESSION['user'] = serialize($user);
       $register_error = false;
       header('Location: '.'dashboard.php');

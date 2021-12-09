@@ -1,20 +1,37 @@
 <?php
   include_once('../cnx/connection.php');
-  include_once('../classes/response.php');
 
-  $reset_query = "DROP TABLE IF EXISTS measurements;";
-  $reset_query = $reset_query."DROP TABLE IF EXISTS wells;";
-  $reset_query = $reset_query."CREATE TABLE wells(id SERIAL PRIMARY KEY,name character varying(100) NOT NULL);";
-  $reset_query = $reset_query.'CREATE TABLE measurements (id SERIAL PRIMARY KEY,well_id INT NOT NULL,pressure INTEGER NOT NULL,"date" DATE NOT NULL,CONSTRAINT fk_well FOREIGN KEY(well_id) REFERENCES wells(id));';
-  $reset_query = $reset_query."INSERT INTO wells (name) VALUES ('Pozo A'),('Pozo B'),('Pozo C'),('Pozo D');";
-  $reset_query = $reset_query."INSERT INTO measurements (well_id, pressure, date) VALUES (1, 30, '2021-11-27'),(1, 35, '2021-11-28'),(1, 50, '2021-11-29'),(1, 40, '2021-11-30'),(1, 55, '2021-12-01'),(2, 33, '2021-11-24'),(2, 29, '2021-11-25'),(2, 47, '2021-11-26'),(3, 25, '2021-11-25'),(3, 35, '2021-11-26'),(3, 45, '2021-11-27'),(4, 37, '2021-11-29'),(4, 28, '2021-11-30'),(4, 32, '2021-12-01'),(4, 39, '2021-12-02'),(4, 40, '2021-12-04');";
-    
+  $reset_query = "DROP TABLE IF EXISTS users, roles, patients, exam_types, exam_states, exams CASCADE;";
+  $reset_query = $reset_query."CREATE TABLE roles(id smallint NOT NULL,name character varying(50) NOT NULL,PRIMARY KEY (id));";
+  $reset_query = $reset_query."CREATE TABLE users(id integer NOT NULL,name character varying(100) NOT NULL,email character varying(100) NOT NULL,password character varying(100) NOT NULL,role_id smallint NOT NULL,PRIMARY KEY (id),FOREIGN KEY (role_id) REFERENCES roles(id));";
+  $reset_query = $reset_query."CREATE TABLE patients(id integer NOT NULL,name character varying(100) NOT NULL,email character varying(100) NOT NULL,PRIMARY KEY (id));";
+  $reset_query = $reset_query."CREATE TABLE exam_types(id smallint NOT NULL,name character varying(50) NOT NULL,PRIMARY KEY (id));";
+  $reset_query = $reset_query."CREATE TABLE exam_states(id smallint NOT NULL,name character varying(50) NOT NULL,PRIMARY KEY (id));";
+  $reset_query = $reset_query."CREATE TABLE exams(id serial NOT NULL,doctor_id integer NOT NULL,patient_id integer NOT NULL,type_id smallint NOT NULL,state_id smallint NOT NULL,results text NOT NULL,PRIMARY KEY (id),FOREIGN KEY (patient_id) REFERENCES patients(id),FOREIGN KEY (type_id) REFERENCES exam_types(id),FOREIGN KEY (state_id) REFERENCES exam_states(id));";
+  $reset_query = $reset_query."INSERT INTO roles (id, name) VALUES (1, 'doctor'), (2, 'nurse');";
+  // $reset_query = $reset_query."INSERT INTO users (id, name, email, password, role_id) VALUES (123, 'Jose', 'jose@gmail.com', '$2y$10$D18xiIDTRdv2JxBKKVSZDeCzM31F/BvQaNSS1McX5KZ2hYfMJJcje', 1), (456, 'María', 'maría@gmail.com', '$2y$10$HvljK/Cz4mUgGMeXPm7JSOucaGU3gBw/BNd.kPtDAQx7fqx2dkmSa', 2);";
+  $reset_query = $reset_query."INSERT INTO patients (id, name, email) VALUES (12345, 'Juan', 'juan.medina@urbe.edu.ve'),(123, 'Jose', 'jose@gmail.com'),(456, 'María', 'maría@gmail.com'),(789, 'Alejandra', 'alejandra@gmail.com'),(987, 'Pedro', 'pedro@gmail.com'),(654, 'Alberto', 'alberto@gmail.com'),(321, 'Beatriz', 'beatriz@gmail.com');";
+  $reset_query = $reset_query."INSERT INTO exam_types (id, name) VALUES (1, 'Examen de Sangre'),(2, 'Perfil Tiroidero'),(3, 'Examen de Glucosa'),(4, 'Examen Rectal'),(5, 'Colesterol Total'),(6, 'Colonoscopia'),(7, 'Audiograma'),(8, 'Presión Arterial'),(9, 'Densitometría Ósea'),(10, 'Examen Ocular');";
+  $reset_query = $reset_query."INSERT INTO exam_states (id, name) VALUES (1, 'pendiente'),(2, 'listo');";
+  $reset_query = $reset_query."INSERT INTO exams (id, doctor_id, patient_id, type_id, state_id, results)VALUES(1, 123, 12345, 1, 1, 'Hematíes = 4.5-5.9 millones/mm3
+  Hemoglobina (Hb) = 13,5-17,5 g/dl
+  Hematocrito (Hto) = 41-53%
+  VCM (volumen corpuscular medio) = 88-100 fl
+  HCM (hemoglobina corpuscular media) = 27-33 pc
+  Linfocitos = 1.300-4.000 /mL
+  Leucocitos = 4.500-11.500 mL
+  Neutrófilos = 2.000-7.500 /mL
+  Eosinófilos = 50-500 /mL
+  Plaquetas = 150000-400000/ mm3
+  VSG (velocidad de sedimentación) = 0-10 mm/h');";
+
   $reset_query_result = pg_query($conn, $reset_query); 
 
   if ($reset_query_result == true) {
-    echo json_encode(new Response(FALSE));
+    echo 'TRUE';
+    header('Location: '.'../login.php');
   } else {
-    echo json_encode(new Response(TRUE));
+    echo 'FALSE';
   }
 
   pg_close($conn);

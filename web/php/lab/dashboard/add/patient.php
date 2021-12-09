@@ -42,7 +42,7 @@ if(isset($_POST['id']) && isset($_POST['name']) && isset($_POST['email'])) {
 
 <body>
   <div id="lab">
-    <form class="login" action="./patient .php" method="POST">
+    <form class="login" action="./patient.php" method="POST">
       <h3 class="title">Registro de Paciente</h3>
       <label>
         <span>Nombre</span>

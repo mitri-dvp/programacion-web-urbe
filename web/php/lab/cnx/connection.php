@@ -1,6 +1,6 @@
 <?php
 // Parse URL
-$db_url = parse_url('postgresql://postgres:27137766@Pg@localhost/lab');
+$db_url = parse_url(getenv("DATABASE_URL"));
 $db_host = $db_url["host"];
 $db_user = $db_url["user"];
 $db_password = $db_url["pass"];

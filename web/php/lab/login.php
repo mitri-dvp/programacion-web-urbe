@@ -2,6 +2,7 @@
 session_start();
 include_once('./cnx/connection.php');
 include_once('./classes/user.php');
+include_once('./utils/index.php');
 
 if(isset($_POST['id']) && isset($_POST['password'])) {
   $id = $_POST['id'];
@@ -18,7 +19,7 @@ if(isset($_POST['id']) && isset($_POST['password'])) {
     $user_exists = true;
     $_user = pg_fetch_object($select_query_result);
     if(password_verify($password, $_user->password)) {
-      $user = new User($_user->id, $_user->name, $_user->email, $_user->role);
+      $user = new User($_user->id, $_user->name, $_user->email, id_to_role($_user->role_id));
       $_SESSION['user'] = serialize($user);
       header('Location: '.'dashboard.php');
     } else {
